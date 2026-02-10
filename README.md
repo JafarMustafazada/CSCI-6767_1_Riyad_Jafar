@@ -1,7 +1,15 @@
 # Predicting Estimated Relative CPU Performance (ERP)
 
+## Updates
+
+ - Added forward and backward results.
+
+**DataSet**
+[Computer Hardware](https://archive.ics.uci.edu/dataset/29/computer%2Bhardware)
+
 **Github**
 [here](https://github.com/JafarMustafazada/CSCI-6767_1_Riyad_Jafar)
+
 
 **Team members & contributions**
 
@@ -71,9 +79,16 @@ All code cells and plots are also in `LinearRegression.ipynb`.
 
 ### 4.3 Multiple regression (full model & selected/reduced)
 ![alt text](image-1.png)
+- full vs reduced
 ![alt text](image-3.png)
-* **Full multiple regression** (all predictors + vendor dummies): statistics reported by `model_multi_sm.summary()` show a **very high R²** on training and strong overall F-test significanceb
-.
+- backward
+![alt text](image-12.png)
+![backward](image-10.png)
+- forward
+![forward](image-11.png)
+
+* **Full multiple regression** (all predictors + vendor dummies): statistics reported by `model_multi_sm.summary()` show a **very high R²** on training and strong overall F-test significanceb.
+
 * **Selected (reduced) model**: We identified statistically significant predictors (p < 0.05) and constructs a reduced model using only those predictors. We also compared full vs reduced by adjusted R², test RSE and MAE and runs an F-test for nested models.
 
 **Final model performance on the same test split (80/20):**
@@ -82,6 +97,7 @@ All code cells and plots are also in `LinearRegression.ipynb`.
 * **Polynomial (degree 2 on MYCT) — test RMSE:** **98.3302**
 
 ![alt text](image-2.png)
+
 (Models sorted by R² and prints the comparison table and bar charts; the best model by test RMSE on the fixed split is the **Multiple Regression** model in this run.)
 
 ### 4.4 Cross-validation (5-fold)
